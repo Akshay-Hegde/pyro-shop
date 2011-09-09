@@ -16,7 +16,7 @@
 		</thead>
 		<tfoot>
 			<tr>
-				<td colspan="3">
+				<td colspan="5">
 					<div class="inner"><?php $this->load->view('admin/partials/pagination'); ?></div>
 				</td>
 			</tr>
@@ -25,7 +25,7 @@
 			<?php foreach ($orders->result() as $order): ?>
 			<tr <?php if ($order->new) echo 'class="bold"'; ?> >
 				<td><?php echo form_checkbox('action_to[]', $order->id); ?></td>
-				<td><a href="/admin/shop/view_order/<?php echo $order->id; ?>"><?php echo $order->id; ?></a></td>
+				<td><a href="<?php echo site_url();?>admin/shop/view_order/<?php echo $order->id; ?>"><?php echo $order->id; ?></a></td>
                                 <td><?php echo $info_array[$order->id]->username; ?></td>
                                 <td><?php echo $order->date; ?></td>
 				<td class="align-center buttons buttons-small">

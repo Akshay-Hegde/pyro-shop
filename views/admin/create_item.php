@@ -23,8 +23,8 @@
             </li>
 
             <li>
-                <label for="manufacturer"><? echo lang('shop.item_manufacturer_label'); ?></label>
-                <?php echo form_input('manufacturer', $post->manufacturer, 'maxlength="10"'); ?>
+                <label for="model"><? echo lang('shop.item_model_label'); ?></label>
+                <?php echo form_input('model', $post->model, 'maxlength="10"'); ?>
                 <span class="required-icon tooltip"><?php echo lang('required_label'); ?></span>
             </li>
             

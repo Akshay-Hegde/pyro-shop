@@ -46,8 +46,8 @@ class Admin extends Admin_Controller {
             'rules' => 'trim|max_length[255]'
         ),
         array(
-            'field' => 'manufacturer',
-            'label' => 'lang:shop.item_manufacturer_label',
+            'field' => 'model',
+            'label' => 'lang:shop.item_model_label',
             'rules' => 'trim|required|max_length[100]'
         ),
         array(
@@ -77,14 +77,14 @@ class Admin extends Admin_Controller {
         $this->load->library('form_validation');
         $this->load->helper('html');
         $this->lang->load('shop');
-  $this->template->set_partial('shortcuts', 'admin/partials/shortcuts');
+        $this->template->set_partial('shortcuts', 'admin/partials/shortcuts');
 
         $this->data->categories = array();
-  if ($categories = $this->shop_cat_m->order_by('name')->get_all()) {
-            foreach ($categories->result() as $category) {
-                    $this->data->categories[$category->id] = $category->name;
-            }
-  }
+        if ($categories = $this->shop_cat_m->order_by('name')->get_all()) 
+        {
+            foreach ($categories->result() as $category) 
+            { $this->data->categories[$category->id] = $category->name; }
+        }
     }
 
     

@@ -50,9 +50,7 @@ class Shop extends Public_Controller {
     {
         $cat = $this->shop_cat_m->get_all();
         $data['shop_categories'] = $cat;
-        $this->template
-                        ->title($this->module_details['name'])
-                        ->build('index', $data);
+        $this->template->title($this->module_details['name'])->build('index', $data);
     }
 
     /**
@@ -77,7 +75,8 @@ class Shop extends Public_Controller {
         $thumbs = array();
 
         
-        foreach ($items->result() as $item) {
+        foreach ($items->result() as $item) 
+        {
             $gallery = $this->galleries_m->get_all_with_filename('galleries.id', $item->gallery);
 
             $gallery = $gallery[0];
@@ -140,6 +139,8 @@ class Shop extends Public_Controller {
                         ->title($this->module_details['name'])
                         ->append_metadata(css('shop-style.css', 'shop'))
                         ->build('view_item', $data);
+                        
+                        
     }
 
 
@@ -187,7 +188,7 @@ class Shop extends Public_Controller {
                    'name'    => $item->name,
                    'options' => $options
                 );
-            $this->cart->product_name_rules	= '\.\:\-_ a-z0-9×�-×ª';
+            $this->cart->product_name_rules	= '\.\:\-_ a-z0-9א-ת';
 
             if ($this->cart->insert($data) == false) die('Can not insert data to cart: ' .var_dump($data));
         }
@@ -201,7 +202,7 @@ class Shop extends Public_Controller {
                    'name'    => $item->name,
                    'options' => $options
                 );
-            $this->cart->product_name_rules	= '\.\:\-_ a-z0-9×�-×ª';
+            $this->cart->product_name_rules	= '\.\:\-_ a-z0-9א-ת';
 
 
             if ($this->cart->insert($data) == false) die('Can not insert data to cart: ' .var_dump($data));
