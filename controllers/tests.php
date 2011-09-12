@@ -22,7 +22,7 @@ class Tests extends Admin_Controller {
         $this->db->trans_start(true);
 
             $this->shop_cat_m->create($category_name);
-            $query = "select count(*) from shop_categories where name={$this->db->escape($category_name)};";
+            $query = "select count(*) from default_shop_categories where name={$this->db->escape($category_name)};";
             $sql = $this->db->query($query);
             $this->db->trans_rollback();
         $this->db->trans_complete();
@@ -45,7 +45,7 @@ class Tests extends Admin_Controller {
             $category_id = $this->db->insert_id();
             $this->shop_cat_m->edit($name_to_set, $category_id);
 
-            $sql = $this->db->query("select name from shop_categories where id={$this->db->escape($category_id)};");
+            $sql = $this->db->query("select name from default_shop_categories where id={$this->db->escape($category_id)};");
 
         $this->db->trans_rollback();
         $this->db->trans_complete();
@@ -57,7 +57,7 @@ class Tests extends Admin_Controller {
         $this->unit->run($test, $expected_result, $test_name);
 
         // Test Create Item
-        $sql = $this->db->query("select id from shop_categories limit 1;");
+        $sql = $this->db->query("select id from default_shop_categories limit 1;");
         $row = $sql->row();
         $category = $row->id;
 
@@ -103,7 +103,7 @@ class Tests extends Admin_Controller {
     {
         $sql = $this->shop_items_m->create($params);
         $item_id =$this->db->insert_id();
-        $query = "select * from shop_items where name={$this->db->escape($params['title'])};";
+        $query = "select * from default_shop_items where name={$this->db->escape($params['title'])};";
         $item_sql = $this->db->query($query);
         $row = $item_sql->row();
 

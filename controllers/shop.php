@@ -81,13 +81,13 @@ class Shop extends Public_Controller {
 
             $gallery = $gallery[0];
 
-            $thumbs[$item->id] = site_url() . 'files/thumb/' . $gallery->file_id;
+            $thumbs[$item->id] = site_url() . 'files/thumb/'. $gallery->file_id;
         }
+        
         $data['thumbs'] = $thumbs;
 
-        $this->template
-                        ->title($this->module_details['name'])
-                        ->build('view_category', $data);
+        $this->template->title($this->module_details['name'])
+                       ->build('view_category', $data);
     }
 
     

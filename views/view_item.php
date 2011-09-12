@@ -29,15 +29,15 @@
         <input type="submit" id="add_to_cart_button" value="<?php echo lang('shop.cart_add_to_cart'); ?>" >
     </div>
     <div id="item_photos">
-        <!--
+
         <?php foreach($item_images as $item_image): ?>
-        <a href="<?php echo site_url() . 'uploads/files/' .$gallery->file_id; ?>" >
-            <img src="<?php echo site_url() . 'uploads/files/' . $item_image->file_id; ?>" alt="<?php echo $item->name; ?>" >
+        <a href="<?php echo site_url().'galleries/'.$gallery->slug.'/'.$gallery->file_id; ?>" >
+            <img src="<?php echo site_url().'files/thumb/'.$gallery->file_id; ?>" alt="<?php echo $item->name; ?>" >
         </a>
         <?php endforeach; ?>
-        -->
+
         <br clear="all">
-        <a href="/galleries/<?php echo $gallery->slug; ?>" >
+        <a href="<?php echo site_url().'galleries/'.$gallery->slug; ?>" >
             <?php echo lang('shop.item_view_gallery_title'); ?>
         </a>
     </div>

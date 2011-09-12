@@ -36,7 +36,7 @@
         <tbody>
         <?php foreach ($items->result() as $item) 
         {
-            echo '<tr><td><!--<img src="' .$thumbs[$item->id]. '" >--></td>';
+            echo '<tr><td><img src="' .$thumbs[$item->id]. '" ></td>';
             echo '<td><a href="' .site_url(). 'shop/view_item/' .$item->id. '">' .$item->name. '</a></td>';
             echo '<td>' .$item->model. '</td>';
             echo '<td>' .lang('shop.currency') .$item->price. '</td></tr>';
