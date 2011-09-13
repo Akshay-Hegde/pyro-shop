@@ -31,8 +31,8 @@
     <div id="item_photos">
 
         <?php foreach($item_images as $item_image): ?>
-        <a href="<?php echo site_url().'galleries/'.$gallery->slug.'/'.$gallery->file_id; ?>" >
-            <img src="<?php echo site_url().'files/thumb/'.$gallery->file_id; ?>" alt="<?php echo $item->name; ?>" >
+        <a href="<?php echo site_url().'galleries/'.$gallery->slug.'/'.$item_image->id; ?>" >
+            <img src="<?php echo site_url().'files/thumb/'.$item_image->thumbnail_id; ?>" alt="<?php echo $item->name; ?>" >
         </a>
         <?php endforeach; ?>
 
