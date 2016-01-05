@@ -1,0 +1,1 @@
+This project aims to extend and improve upon the addon module developed by anatoly-khelmer (hosted on github:pyrocms-shop).
